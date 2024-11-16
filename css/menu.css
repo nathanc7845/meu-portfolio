@@ -1,0 +1,90 @@
+.menu-rol {
+    position: relative;
+    width: 60px;
+}
+
+.menu-toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu-toggle i {
+    color: #ffffff;
+    font-size: 24px;
+    transition: transform 0.5s ease;
+}
+
+.menu-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.menu {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s ease; 
+}
+
+.menu.active {
+    height: 350px;
+}
+
+.menu-item-v {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #131313;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.menu-item-v i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item-v:hover i {
+    transform: scale(1.2);
+}
+
+.menu.active .menu-item-v {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
